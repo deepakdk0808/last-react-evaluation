@@ -19,8 +19,8 @@ import { useNavigate } from 'react-router-dom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.common.red,
+    color: theme.palette.common.black,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -31,7 +31,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
     backgroundColor: theme.palette.action.hover,
   },
-  // hide last border
   '&:last-child td, &:last-child th': {
     border: 0,
   },
@@ -48,15 +47,9 @@ const rows = [
   createData('Cupcake', 305, 3.7, 67, 4.3),
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
-// const useStyles = makeStyles({
-//     table:{
-//         minWidth:700,
-//     }
-// })
 
 
 const Home = () => {
- // const classes = useStyles()
   let dispatch = useDispatch()
   let navigate = useNavigate()
   
@@ -65,7 +58,7 @@ const Home = () => {
     dispatch(loadUsers())
   },[])
   const handleDelete=(id)=>{
-    if(window.confirm('are you sure')){
+    if(window.confirm('Dont Delete')){
       dispatch(deleteUser(id))
     }
   }

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
 import { useDispatch , useSelector} from 'react-redux';
 import { updatecity, updatedcity} from '../redux/action';
 import { useNavigate, useParams } from 'react-router-dom';
-//import Button from '@mui/material/Button';
 
 
 
@@ -38,7 +35,7 @@ const EditUser = () => {
     const handleSubmit=(e)=>{
         e.preventDefault()
         if(!country || !city || !population){
-            setError('all fields are required')
+            setError('Fill All The Fields')
         }
         else{
              dispatch(updatedcity(state, id))

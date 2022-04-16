@@ -8,16 +8,11 @@ const initialState = {
 const userReducers = (state=initialState,action)=>{
     switch(action.type){
         case types.GET_USERS:
-            return {
-                ...state,
-                users:action.payload,
-                loading:false,
-            };
+            return { ...state,   users:action.payload, loading:false,  };
+
             case types.DELETE_USER:
-                return{
-                    ...state,
-                    loading:false,
-                };
+                return{ ...state,  loading:false,  };
+
                 case types.ADD_USER:
                     case types.GETONECITY:
                     return{
@@ -25,10 +20,11 @@ const userReducers = (state=initialState,action)=>{
                         user:action.payload,
                         loading:false,
                     }
-                    case types.UPDTAE:
+                    case types.UPDATE:
             default:
                 return state
     }
 }
 
 export default userReducers
+

@@ -13,7 +13,7 @@ const userAdded = ()=>({
     type:types.ADD_USER,
 })
 const userUpdate = ()=>({
-    type:types.UPDTAE,
+    type:types.UPDATE,
 })
 const userUpdated = (user)=>({
     type:types.GETONECITY,
@@ -49,7 +49,6 @@ export const updatecity=(id)=>{
     return function(dispatch){
         axios.get(`${process.env.REACT_APP_API}/${id}`).then((resp)=>{
             dispatch(userUpdated(resp.data))
-           // dispatch(loadUsers())
         }).catch((err)=>{console.log(err)})
     }
 }
@@ -57,7 +56,6 @@ export const updatedcity=(user,id)=>{
     return function(dispatch){
         axios.put(`${process.env.REACT_APP_API}/${id}`,user).then((resp)=>{
             dispatch(userUpdate())
-           // dispatch(loadUsers())
         }).catch((err)=>{console.log(err)})
     }
 }
